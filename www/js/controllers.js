@@ -1,4 +1,4 @@
-angular.module('App.controllers', [])
+angular.module('Fashionista.controllers', [])
     .controller('MainCtrl', ['$scope', function ($scope) {
         $scope.status = "It works!";
     }])

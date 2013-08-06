@@ -1,4 +1,4 @@
-angular.module('App', ['App.services', 'App.controllers'])
+angular.module('Fashionista', ['Fashionista.services', 'Fashionista.controllers'])
     .config(['$compileProvider', function ($compileProvider) {
         $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
     }])
