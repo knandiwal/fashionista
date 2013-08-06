@@ -18,16 +18,16 @@
  under the License.
 -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
-        id        = "io.cordova.helloCordova"
-        version   = "2.0.0">
-    <name>Hello Cordova</name>
+        id        = "com.kraigwalker.Fashionista"
+        version   = "1.0.0">
+    <name>Fashionista</name>
 
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Rate the world's looks on Instagram
     </description>
 
-    <author href="http://cordova.io" email="dev@cordova.apache.org">
-        Apache Cordova Team
+    <author href="http://kraigwalker.com" email="kraig_walker@me.com">
+        Kraig Walker
     </author>
 
     <access origin="*"/>
