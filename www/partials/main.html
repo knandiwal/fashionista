@@ -1,11 +1,5 @@
-<!-- Main View -->
-<!-- contains footer, but also ng-includes child views -->
-<div ng-controller="mainController">
-
-<!-- Current View -->
-<div ng-include src="template.url"></div>
-
-<!-- footer (selects which view to display in template.url)-->
-<div class="tab-bar">
-    <div class="center-button"></div>
-</div>
+<h1> First Name: {{ user.firstname }} </h1>
+<br />
+<h1> Last Name: {{ user.lastname }} </h1>
+<br />
+<h1> Username: {{ user.id }} </h1>

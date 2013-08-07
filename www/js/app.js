@@ -8,7 +8,7 @@ angular.module('Fashionista', ['Fashionista.services', 'Fashionista.controllers'
         .when('/', {
             // Login Window
             controller: 'MainCtrl',
-            templateUrl: 'partials/login.html'
+            templateUrl: 'partials/main.html'
         })
         // Profile
         .when('/view', {
