@@ -109,6 +109,9 @@
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage"/>
     </feature>
+    <feature name="Instagram">
+      <param name="Instagram" value="CDVInstagramPlugin"/>
+    </feature>
     <!-- Deprecated plugins element. REmove in 3.0 -->
     <plugins>
     </plugins>

@@ -1,1 +1,11 @@
-<h1> Main View: {{ status }} </h1>
+<!-- Main View -->
+<!-- contains footer, but also ng-includes child views -->
+<div ng-controller="mainController">
+
+<!-- Current View -->
+<div ng-include src="template.url"></div>
+
+<!-- footer (selects which view to display in template.url)-->
+<div class="tab-bar">
+    <div class="center-button"></div>
+</div>
