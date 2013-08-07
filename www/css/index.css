@@ -8,13 +8,9 @@ body {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color: gray;
     background-image:url(../img/128-184.jpg);background-repeat:repeat;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
     height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
     width:100%;
+    font-family: helvetica;
 }
 
 /* Landscape layout (with min-width) */
@@ -22,36 +18,17 @@ body {
 
 }
 
-@keyframes animatedBackground {
-    from { background-position: 0 0; }
-    to { background-position: 100% 100%; }
-}
-
-.login-background {
-    background-color: gray;
-    background-image:url(../img/128-184.jpg);background-repeat:repeat;
-    animation: animatedBackground 20s linear infinite;
-}
-
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-}
-
     /* Nav Container */
 nav {
+    text-align: center;
     background-color: #000;
     padding: .1em 0;
     position: fixed;
     bottom: 0;
     width: 100%;
-    border-top: 05em solid rgba(255,255,255,.33);
     -webkit-box-shadow: 0 -0.05em 0 rgba(0,0,0,0.9);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,.15)), color-stop(0.5, rgba(255,255,255,.10)), color-stop(0.505, rgba(255,255,255,.0)), to(rgba(255,255,255,.0)));
+    background-image: gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,.15)), color-stop(0.5, rgba(255,255,255,.10)), color-stop(0.505, rgba(255,255,255,.0)), to(rgba(255,255,255,.0)));
 }
 
     /* Nav item Example */
@@ -61,8 +38,8 @@ a {
     width:                  3.5em;
     height:                 3.5em;
     position:               relative;
-    border-radius:          .25em;
     -webkit-border-radius:  .25em;
+    border-radius:          .25em;
     display:                inline-block;
     vertical-align:         middle;
 }
@@ -73,7 +50,7 @@ a > strong {
     color: #999;
     bottom: 0;
     width: 100%;
-    text-align: center;
+    /*text-align: center; */
     line-height: 1.5em;
     font-weight: bold;
     -webkit-font-smoothing: antialiased;
@@ -97,6 +74,7 @@ a::after, a::before {
     /* Grey Icon */
 
 a::before {
+    background-image: gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#333));
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#333));
     z-index: 1;
 }
@@ -105,6 +83,7 @@ a::before {
 
 a::after {
     margin-top: -.2em;
+    background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,.75);
     z-index: 0;
 }
@@ -112,6 +91,7 @@ a::after {
       /* Active Settings */
 
 a.active {
+    background-color: rgb(255,255,255);
     background-color: rgba(255,255,255,.10);
 }
 
@@ -151,8 +131,8 @@ a.active::after {
 
 .tab-bar {
     position:fixed;
-    left:0px;
-    bottom:0px;
+    left:0;
+    bottom:0;
     height:30px;
     width:100%;
     background:#999;
@@ -177,29 +157,31 @@ a.active::after {
     color: #fff;
     text-align: center;
     font-size: 24pt;
+    vertical-align: middle;
     text-transform: none;
 }
 
 /* Login Form Modal */
 #login-form {
     background-color: #363636;
-    border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+    border-radius: 5px;
     margin: 50px auto;
     /*margin-top: 0; */
     width: 300px;
-  font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-  -webkit-box-shadow:  0px 10px 20px 0px rgba(0, 0, 0, 0.3);
-   box-shadow:  0px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow:  0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow:  0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
 #login-form h1 {
     background-color: #292829;
-    border-radius: 5px 5px 0px 0px;
-    -moz-border-radius: 5px 5px 0px 0px;
-    -webkit-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -226,15 +208,15 @@ a.active::after {
     outline: none;
     -webkit-appearance:none;
     width: 260px;
-    align: center;
-    position: center;
+    text-align: center;
+    position: relative;
 }
 
 #login-form fieldset form input[type="email"] {
     border: 1px solid #292829;
-    border-radius: 3px 3px 0px 0px;
-    -moz-border-radius: 3px 3px 0px 0px;
-    -webkit-border-radius: 3px 3px 0px 0px;
+    border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px 3px 0 0;
     padding: 12px 10px;
     width: 238px;
   -webkit-appearance:none;
@@ -243,9 +225,9 @@ a.active::after {
 #login-form fieldset form input[type="password"] {
     border: 1px solid #292829;
     border-top: none;
-    border-radius: 0px 0px 3px 3px;
-    -moz-border-radius: 0px 0px 3px 3px;
-    -webkit-border-radius: 0px 0px 3px 3px;
+    border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    -webkit-border-radius: 0 0 3px 3px;
     padding: 12px 10px;
     width: 238px;
     -webkit-appearance:none;
@@ -341,7 +323,7 @@ a.active::after {
     left: 0;
     border-radius: 0.25em;
     padding-left: 0.25em;
-    box-shadow: inset 1px 1px 0px rgba(255,255,255,0.5), inset -1px -1px 0 rgba(0,0,0,0.1);
+    box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5), inset -1px -1px 0 rgba(0,0,0,0.1);
 
 background: -moz-linear-gradient(top,  rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.2) 49%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.35)), color-stop(49%,rgba(255,255,255,0.2)), color-stop(50%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.1)));
@@ -396,24 +378,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40ffffff', e
 /* Active */
 .btn-instagram:active {
     margin:1px 0 0;
-}
-
-/* Keyframes */
-
-
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
-
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
-
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
 }
