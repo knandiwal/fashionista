@@ -2,11 +2,6 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
-        Instagram.isInstalled(function (err, installed) {
-            console.log("Instagram is installed");
-        } else {
-            console.log("Instagram is not installed");
-        });
     },
     // Bind Event Listeners
     //

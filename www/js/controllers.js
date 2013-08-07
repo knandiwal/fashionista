@@ -1,6 +1,7 @@
 angular.module('Fashionista.controllers', [])
 	// Main Controller (main.html)
     .controller('MainCtrl', ['$scope', function ($scope) {
+    	$scope.pageTitle = "Profile";
         $scope.user = {
 			firstname: "Kraig",
 			lastname: "Walker",
