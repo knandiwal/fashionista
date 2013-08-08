@@ -1,0 +1,359 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color: gray;
+    background-image:url(../img/128-184.jpg);background-repeat:repeat;
+    height:100%;
+    width:100%;
+    font-family: helvetica;
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+
+}
+
+/* Profile */
+.profile {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.user-pic {
+    vertical-align: middle;
+    width: 76px;
+    height: 76px;
+    border-radius: 8px;
+    margin: 20px 20px;
+    float: left;
+}
+
+.user-username {
+    float: left;
+    margin-top: 70px;
+}
+
+/* Navigation Bar */
+.navigationbar {
+    height: 44px;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    -webkit-box-sizing:border-box;
+    box-sizing: border-box;
+    background-color: #6d84a2;
+    text-align: center;
+    line-height: 44px;
+    color: white;
+    font-size: 20px;
+    font-weight:bold;
+    text-shadow: rgba(0, 0, 0, 0.5) 0 -1px;
+}
+.navigationbar h1 {
+    margin-top: 8px;
+    color: white;
+    font-size: 20px;
+    font-weight:bold;
+    text-shadow: rgba(0, 0, 0, 0.5) 0 -1px;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.navigationbar.black {
+    height: 44px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: black;
+    text-align: center;
+    line-height: 44px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: rgba(0, 0, 0, 0.5) 0 -1px;
+}
+
+.navigationbar.green {
+    height:44px;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    /*
+    background:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255,255,255,0.7)), color-stop(2.273%, rgba(255,255,255,0.4)), color-stop(50%, rgba(255,255,255,0.2)), color-stop(50%, rgba(255,255,255,0.15)), color-stop(95.455%, rgba(255,255,255,0)), color-stop(100%, rgba(0,0,0,0.4)));background:-webkit-linear-gradient(top, rgba(255,255,255,0.7),rgba(255,255,255,0.4) 2.273%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0) 95.455%,rgba(0,0,0,0.4));
+    background:linear-gradient(top, rgba(255,255,255,0.7),rgba(255,255,255,0.4) 2.273%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0) 95.455%,rgba(0,0,0,0.4));
+    */
+    background-color:green;
+    text-align:center;
+    line-height:44px;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    text-shadow:rgba(0, 0, 0, 0.5) 0 -1px
+}
+
+/* Nav Container */
+nav {
+    text-align: center;
+    background-color: #000;
+    padding: .1em 0;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    width: 100%;
+    -webkit-box-shadow: 0 -0.05em 0 rgba(0,0,0,0.9);
+    /*background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,.15)), color-stop(0.5, rgba(255,255,255,.10)), color-stop(0.505, rgba(255,255,255,.0)), to(rgba(255,255,255,.0)));
+    background-image: gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,.15)), color-stop(0.5, rgba(255,255,255,.10)), color-stop(0.505, rgba(255,255,255,.0)), to(rgba(255,255,255,.0)));
+    */
+}
+
+    /* Nav item Example */
+
+a.tab {
+    margin:                 0 auto;
+    width:                  3.5em;
+    height:                 3.5em;
+    position:               relative;
+    -webkit-border-radius:  .25em;
+    border-radius:          .25em;
+    display:                inline-block;
+    vertical-align:         middle;
+}
+
+a.tab > strong {
+    position:  absolute;
+    font-size: .5em;
+    color: #999;
+    bottom: 0;
+    width: 100%;
+    /*text-align: center; */
+    line-height: 1.5em;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+}
+
+a.tab::after, a.tab::before {
+    position: absolute;
+    content: " ";
+    top: -1em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    -webkit-mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-image: url('../img/target-2x.png');
+
+    zoom: .5; /* Scales to 50% Size & has better rendering than transform */
+}
+
+    /* Grey Icon */
+
+a.tab::before {
+    background-image: gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#333));
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#333));
+    z-index: 1;
+}
+
+      /* Icon Shadow */
+
+a.tab::after {
+    margin-top: -.2em;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,.75);
+    z-index: 0;
+}
+
+      /* Active Settings */
+
+a.tab.active {
+    background-color: rgb(255,255,255);
+    background-color: rgba(255,255,255,.10);
+}
+
+a.tab.active > strong {
+    color: #fff;
+}
+
+a.tab.active::before {
+    background: -webkit-gradient(linear, 38% 0%, 60% 70%, from(#DDE9F0), color-stop(0.6, #79B2EC), color-stop(0.7, #2E91E5), to(#3FC5F8));
+}
+
+a.tab.active::after {
+    margin-top: .2em;
+}
+
+/* Login Form Modal */
+#login-form {
+    background-color: #363636;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 50px auto;
+    /*margin-top: 0; */
+    width: 300px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    -moz-box-shadow:  0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow:  0 10px 20px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+}
+
+#login-form h1 {
+    background-color: #292829;
+    border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+#login-form fieldset {
+    border: none;
+    padding: 20px;
+    position: relative;
+}
+
+
+#login-form fieldset form {
+    overflow: hidden;
+    width: 270px;
+}
+
+#login-form fieldset form input {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    outline: none;
+    -webkit-appearance:none;
+    width: 260px;
+    text-align: center;
+    position: relative;
+}
+
+#login-form fieldset form input[type="email"] {
+    border: 1px solid #292829;
+    border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px 3px 0 0;
+    padding: 12px 10px;
+    width: 238px;
+  -webkit-appearance:none;
+}
+
+#login-form fieldset form input[type="password"] {
+    border: 1px solid #292829;
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    -webkit-border-radius: 0 0 3px 3px;
+    padding: 12px 10px;
+    width: 238px;
+    -webkit-appearance:none;
+}
+
+#login-form fieldset form input[type="submit"] {
+    background-color: #ebebeb;
+    border: none;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    color: #404040;
+    cursor: pointer;
+    float: none;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 12px 12px;
+    -webkit-appearance: none;
+}
+
+#login-form fieldset form input[type="submit"]:hover {
+    background-color: #e0e0e0;
+}
+
+#login-form fieldset form span:before {
+    background-color: #c9c9c9;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    content: "?";
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 10px;
+    text-align: center;
+    width: 20px;
+}
+
+#login-form fieldset form span {
+    font-size: 12px;
+    margin-top: 40px;
+}
+
+#login-form fieldset form span a{
+    color: #eb6d1a;
+    text-decoration: none;
+}
+
+#login-form fieldset form span a:hover {
+    color: #eb6d1a;
+}
+
+/* Login with Instagram Button */
+/* Base styles */
+.btn-instagram {
+    font-size: 1.2em;
+    font-family: sans-serif;
+    color:#333;
+    text-shadow:1px 1px #fff;
+    text-decoration: none;
+    display:inline-block;
+    padding:0.5em 1.75em 0.5em 1em;
+    border-radius: 0.25em;
+    background: #f8f8f8;
+    border:1px solid #ccc;
+    border-right:0.25em solid #00558D; /* blue stripe */
+    position: relative;
+    margin:20px 0 1px 0;
+}
+
+.btn-instagram:before, .btn-instagram:after {
+    content:'';
+    display:block;
+    position: absolute;
+}
+
+/* Animate - Fade */
+.btn-instagram, .btn-instagram:before {
+    -webkit-transition-property: background, border;
+    -webkit-transition: 0.1s ease-in;
+    -moz-transition-property: background, border;
+    -moz-transition: 0.1s ease-in;
+    -o-transition-property: background, border;
+    -o-transition: 0.1s ease-in;
+    transition-property: background, border;
+    transition: 0.1s ease-in;
+}
+
+/* Active */
+.btn-instagram:active {
+    margin:1px 0 0;
+}
