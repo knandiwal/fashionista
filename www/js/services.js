@@ -1,4 +1,4 @@
-angular.module('Fashionista.services', [])
+angular.module('fashionista.services', [])
     .factory('cordovaReady', [function () {
         return function (fn) {
             var queue = [],

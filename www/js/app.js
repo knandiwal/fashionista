@@ -1,13 +1,13 @@
 // Create The App Scope
-angular.module('Fashionista', ['Fashionista.services', 'Fashionista.controllers'])
+angular.module('fashionista', ['fashionista.services', 'fashionista.controllers'])
     .config(['$compileProvider', function ($compileProvider) {
         $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
     }])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
         .when('/', {
-            controller: 'MainCtrl',
-            templateUrl: 'partials/thewalk.html'
+            controller: 'LoginCtrl',
+            templateUrl: 'partials/login.html'
         })
         // view
         .when('/profile', {
@@ -19,7 +19,7 @@ angular.module('Fashionista', ['Fashionista.services', 'Fashionista.controllers'
             templateUrl: 'partials/discover.html'
         })
         .when('/thewalk', {
-            controller: 'MainCtrl',
+            controller: 'WalkCtrl',
             templateUrl: 'partials/thewalk.html'
         })
         // if none of these urls are requested go back to the login view

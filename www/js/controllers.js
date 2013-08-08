@@ -1,4 +1,4 @@
-angular.module('Fashionista.controllers', [])
+angular.module('fashionista.controllers', [])
 
 	// Profile Controller (profile.html)
     .controller('ProfileCtrl', ['$scope', function ($scope) {
@@ -10,8 +10,12 @@ angular.module('Fashionista.controllers', [])
 			pic: "http://images.ak.instagram.com/profiles/profile_4454353_75sq_1365259612.jpg"
 		};
     }])
-    .controller('MainCtrl', ['$scope', function ($scope) {
-    	// put Main Shit In here
+    .controller('LoginCtrl', ['$scope', function ($scope) {
+		// put Main Stuff In here
+    }])
+	.controller('WalkCtrl', ['$scope', function ($scope) {
+		// put Walk Stuff In here
+
     }])
 
     // View 2 Controller (needs a better name)
@@ -50,7 +54,7 @@ angular.module('Fashionista.controllers', [])
 		// Do all initialization code (stuff before the view is rendered) here
 		$scope.init = function() {
 			// Set the initial view to Profile
-			$scope.changeView($scope.tabDivs[0].url);
+			// $scope.changeView($scope.tabDivs[0].url);
 			$scope.tabDivs[0].class = 'active';
 		};
     }]);

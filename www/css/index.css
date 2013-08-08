@@ -94,6 +94,10 @@ body {
     right:0;
     -webkit-box-sizing:border-box;
     box-sizing:border-box;
+    /*
+    background:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255,255,255,0.7)), color-stop(2.273%, rgba(255,255,255,0.4)), color-stop(50%, rgba(255,255,255,0.2)), color-stop(50%, rgba(255,255,255,0.15)), color-stop(95.455%, rgba(255,255,255,0)), color-stop(100%, rgba(0,0,0,0.4)));background:-webkit-linear-gradient(top, rgba(255,255,255,0.7),rgba(255,255,255,0.4) 2.273%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0) 95.455%,rgba(0,0,0,0.4));
+    background:linear-gradient(top, rgba(255,255,255,0.7),rgba(255,255,255,0.4) 2.273%,rgba(255,255,255,0.2) 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0) 95.455%,rgba(0,0,0,0.4));
+    */
     background-color:green;
     text-align:center;
     line-height:44px;
@@ -113,14 +117,14 @@ nav {
     bottom: 0;
     width: 100%;
     -webkit-box-shadow: 0 -0.05em 0 rgba(0,0,0,0.9);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,.15)), color-stop(0.5, rgba(255,255,255,.10)), color-stop(0.505, rgba(255,255,255,.0)), to(rgba(255,255,255,.0)));
+    /*background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,.15)), color-stop(0.5, rgba(255,255,255,.10)), color-stop(0.505, rgba(255,255,255,.0)), to(rgba(255,255,255,.0)));
     background-image: gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,.15)), color-stop(0.5, rgba(255,255,255,.10)), color-stop(0.505, rgba(255,255,255,.0)), to(rgba(255,255,255,.0)));
-    
+    */
 }
 
     /* Nav item Example */
 
-a {
+a.tab {
     margin:                 0 auto;
     width:                  3.5em;
     height:                 3.5em;
@@ -131,7 +135,7 @@ a {
     vertical-align:         middle;
 }
 
-a > strong {
+a.tab > strong {
     position:  absolute;
     font-size: .5em;
     color: #999;
@@ -143,7 +147,7 @@ a > strong {
     -webkit-font-smoothing: antialiased;
 }
 
-a::after, a::before {
+a.tab::after, a.tab::before {
     position: absolute;
     content: " ";
     top: -1em;
@@ -160,7 +164,7 @@ a::after, a::before {
 
     /* Grey Icon */
 
-a::before {
+a.tab::before {
     background-image: gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#333));
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccc), to(#333));
     z-index: 1;
@@ -168,7 +172,7 @@ a::before {
 
       /* Icon Shadow */
 
-a::after {
+a.tab::after {
     margin-top: -.2em;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,.75);
@@ -177,75 +181,21 @@ a::after {
 
       /* Active Settings */
 
-a.active {
+a.tab.active {
     background-color: rgb(255,255,255);
     background-color: rgba(255,255,255,.10);
 }
 
-a.active > strong {
+a.tab.active > strong {
     color: #fff;
 }
 
-a.active::before {
+a.tab.active::before {
     background: -webkit-gradient(linear, 38% 0%, 60% 70%, from(#DDE9F0), color-stop(0.6, #79B2EC), color-stop(0.7, #2E91E5), to(#3FC5F8));
 }
 
-a.active::after {
+a.tab.active::after {
     margin-top: .2em;
-}
-
-/*    Don't want to serve low resolution devices a high resolution image?
-      Use a low res image, zoom out & cut a few positioning values in half. */
-/*
-      @media screen and (-webkit-min-device-pixel-ratio: 1) {
-
-        a::after,
-        a::before{
-          top:                  -.5em;
-          -webkit-mask-image:   url('target.png');
-          zoom:                 1;
-        }
-
-        a::after{
-          margin-top:           -.1em;
-        }
-
-        a.active::after{
-          margin-top:           .1em;
-        }
-      }
-*/
-
-.tab-bar {
-    position:fixed;
-    left:0;
-    bottom:0;
-    height:30px;
-    width:100%;
-    background:#999;
-}
-.center-button {
-    position:relative;
-    margin: -30px auto;
-    text-align: center ;
-    width: 70pt;
-    height: 70pt;
-    padding: 0;
-    background-color: gold;
-    opacity: 1;
-
-}
-
-.header {
-    width: 100%;
-    height: 44pt;
-    background-color: chocolate;
-    top: 0;
-    color: #fff;
-    text-align: center;
-    font-size: 24pt;
-    vertical-align: middle;
-    text-transform: none;
 }
 
 /* Login Form Modal */
@@ -391,38 +341,6 @@ a.active::after {
     position: absolute;
 }
 
-/* Add Stripes */
-.btn-instagram:before {
-    width:0.25em;
-    height: 100%;
-    background:#FBB03B; /* yellow stripe */
-    border-left:0.25em solid #D4145A; /* red stripe */
-    border-right:0.25em solid #00A99D; /* green stripe */
-    top:0;
-    right:0;
-}
-
-/* Add Hightlights */
-.btn-instagram:after {
-    width:100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 0.25em;
-    padding-left: 0.25em;
-    box-shadow: inset 1px 1px 0 rgba(255,255,255,0.5), inset -1px -1px 0 rgba(0,0,0,0.1);
-
-background: -moz-linear-gradient(top,  rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.2) 49%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.35)), color-stop(49%,rgba(255,255,255,0.2)), color-stop(50%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.1)));
-background: -webkit-linear-gradient(top,  rgba(255,255,255,0.35) 0%,rgba(255,255,255,0.2) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.1) 100%);
-background: -o-linear-gradient(top,  rgba(255,255,255,0.35) 0%,rgba(255,255,255,0.2) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.1) 100%);
-background: -ms-linear-gradient(top,  rgba(255,255,255,0.35) 0%,rgba(255,255,255,0.2) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.1) 100%);
-background: linear-gradient(to bottom,  rgba(255,255,255,0.35) 0%,rgba(255,255,255,0.2) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59ffffff', endColorstr='#1a000000',GradientType=0 );
-
-}
-
-
 /* Animate - Fade */
 .btn-instagram, .btn-instagram:before {
     -webkit-transition-property: background, border;
@@ -433,33 +351,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59ffffff', e
     -o-transition: 0.1s ease-in;
     transition-property: background, border;
     transition: 0.1s ease-in;
-
-}
-
-/* Hover / Focus */
-.btn-instagram:hover, .btn-instagram:focus  {
-    background: #fff;
-}
-
-.btn-instagram:hover {
-    border-right:0.25em solid #09c;
-}
-
-.btn-instagram:hover:before {
-    background:#fc6; /* yellow stripe */
-    border-left:0.25em solid #f06; /* red stripe */
-    border-right:0.25em solid #0cc; /* green stripe */
-}
-
-.btn-instagram:hover:after {
-background: -moz-linear-gradient(top,  rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 49%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.05) 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.25)), color-stop(49%,rgba(255,255,255,0.1)), color-stop(50%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.05)));
-background: -webkit-linear-gradient(top,  rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.1) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.05) 100%);
-background: -o-linear-gradient(top,  rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.1) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.05) 100%);
-background: -ms-linear-gradient(top,  rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.1) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.05) 100%);
-background: linear-gradient(to bottom,  rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.1) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.05) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40ffffff', endColorstr='#0d000000',GradientType=0 );
-
 }
 
 /* Active */
