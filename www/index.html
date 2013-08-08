@@ -9,22 +9,17 @@
     /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
     html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
     </style>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/foundation.min.css" />
     <link rel="stylesheet" type="text/css" href="css/index.css" />
 </head>
 <body>
-    <!-- Links to the different views -->
-    <!-- <a href="#/">Main View</a>
-    <a href="#/view">New View</a> -->
-
-    <header class="navigationbar black">
-        <h1>Profile</h1>
-    </header>
 
     <!-- Placeholder For Injecting Our Views -->
-    <div ng-view style="padding-top: 44px;"></div>
+    <div ng-view style="padding-top: 44px; padding-bottom: 44px; overflow: scroll; background: white;"></div>
 
     <!-- Tab Bar -->
-    <nav ng-controller="TabCtrl">
+    <nav ng-controller="TabCtrl" ng-init="init()">
         <a ng-repeat="div in tabDivs" ng-class="div.class" ng-click="setSelected($index)">
           <strong>{{ div.name }}</strong>
         </a>
@@ -33,6 +28,7 @@
     <!-- Libs -->
     <script type="text/javascript" src="lib/cordova.js"></script>
     <script type="text/javascript" src="lib/angular-1.1.5.js"></script>
+    <script src="js/css3-mediaqueries.js"></script>
 
     <!-- App -->
     <script type="text/javascript" src="js/index.js"></script>

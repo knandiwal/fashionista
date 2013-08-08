@@ -6,9 +6,8 @@ angular.module('Fashionista', ['Fashionista.services', 'Fashionista.controllers'
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
         .when('/', {
-            // Profile Window
             controller: 'MainCtrl',
-            templateUrl: 'partials/main.html'
+            templateUrl: 'partials/thewalk.html'
         })
         // view
         .when('/profile', {
@@ -18,6 +17,10 @@ angular.module('Fashionista', ['Fashionista.services', 'Fashionista.controllers'
         .when('/discover', {
             controller: 'ViewCtrl',
             templateUrl: 'partials/discover.html'
+        })
+        .when('/thewalk', {
+            controller: 'MainCtrl',
+            templateUrl: 'partials/thewalk.html'
         })
         // if none of these urls are requested go back to the login view
         .otherwise({redirectTo: '/'});
