@@ -1,11 +1,13 @@
 angular.module('Fashionista.controllers', [])
-	// Main Controller (main.html)
-    .controller('MainCtrl', ['$scope', function ($scope) {
+
+	// Profile Controller (profile.html)
+    .controller('ProfileCtrl', ['$scope', function ($scope) {
 		$scope.pageTitle = "Profile";
         $scope.user = {
 			firstname: "Kraig",
 			lastname: "Walker",
-			id: "kraigwalker"
+			id: "kraig_walker",
+			pic: "http://images.ak.instagram.com/profiles/profile_4454353_75sq_1365259612.jpg"
 		};
     }])
 
@@ -14,19 +16,26 @@ angular.module('Fashionista.controllers', [])
         $scope.status = "Also totally works!";
     }])
     // Control the divs on the tab bar
-    .controller('TabCtrl', ['$scope', function ($scope) {
-		var scope = $scope;
-		scope.tabDivs = [
-			{ 'class' : '', name : 'Profile', url : '#' },
-			{ 'class' : '', name : 'The Walk', url : '#' },
-			{ 'class' : '', name : 'Discover', url : '#' }
+    .controller('TabCtrl', ['$scope', '$location', function ($scope, $location) {
+		$scope.tabDivs = [
+			{ 'class' : '', name : 'Profile', url : '/profile' },
+			{ 'class' : '', name : 'The Walk', url : '/main' },
+			{ 'class' : '', name : 'Discover', url : '/discover' }
 		];
-		scope.lastSelectedDiv = -1;
-		scope.setSelected = function(idx) {
-			if(scope.lastSelectedDiv != -1) {
-				scope.tabDivs[scope.lastSelectedDiv].class = '';
+		$scope.lastSelectedDiv = -1;
+
+		$scope.changeView = function(view){
+			$location.path(view);	// use a path, not hash
+		}
+
+		$scope.setSelected = function(index) {
+			if($scope.lastSelectedDiv != -1) {
+				$scope.tabDivs[$scope.lastSelectedDiv].class = '';
 			}
-			scope.lastSelectedDiv = idx;
-			scope.stackedDivs[idx].class = 'classA';
+			$scope.lastSelectedDiv = index;
+			$scope.tabDivs[index].class = 'active';
+			// change the view
+			$scope.changeView($scope.tabDivs[index].url);
+			console.log("Selected " + index);
 		};
     }]);
